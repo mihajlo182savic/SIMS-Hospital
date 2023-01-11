@@ -1,0 +1,4 @@
+No Room|Neki purpose|0|1
+soba|namena|1|4
+soba 404|Nista|1|5
+Roomxd|Operacija|1|0

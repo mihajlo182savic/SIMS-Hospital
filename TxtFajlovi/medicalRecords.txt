@@ -1,0 +1,16 @@
+0|5|a-|polen-penicilin-perje-kraj
+1|6|a-|polen-prasina-aspirin-kraj
+2|7|a-|polen-kraj
+3|8|a-|polen-aspirin-kraj
+4|9|a-|polen-penicilin-kraj
+5|10|a-|polen-penicilin-kraj
+6|11|a-|polen-penicilin-kraj
+7|12|ab+|perje-penicilin-kraj
+8|13|ab+|aspirin-penicilin-kraj
+9|14|ab+|aspirin-kraj
+10|15|ab+|aspirin-kraj
+11|16|ab+|brom-kraj
+12|17|ab+|empty-kraj
+12|18|ab+|empty-kraj
+13|19|ab+|empty-kraj
+14|20|ab+|empty-kraj

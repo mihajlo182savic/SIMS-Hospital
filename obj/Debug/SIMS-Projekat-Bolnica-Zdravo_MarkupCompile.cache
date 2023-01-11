@@ -1,0 +1,20 @@
+﻿SIMS-Projekat-Bolnica-Zdravo
+
+
+winexe
+C#
+.cs
+C:\Users\Dusan\OneDrive\Desktop\Faks\3. Godina\6 Semestar\SIMS\SIMS Projekat\SIMS-Projekat-Bolnica-Zdravo\obj\Debug\
+SIMS_Projekat_Bolnica_Zdravo
+none
+false
+DEBUG;TRACE
+C:\Users\Dusan\OneDrive\Desktop\Faks\3. Godina\6 Semestar\SIMS\SIMS Projekat\SIMS-Projekat-Bolnica-Zdravo\App.xaml
+621453177261
+
+168-1818774959
+42-1897915033
+Windows\DoctorWindows\DoctorWindows\AddMedicine.xaml;Windows\DoctorWindows\DoctorWindows\DialogWindow.xaml;Windows\DoctorWindows\DoctorWindows\MedicalRecordDoc.xaml;Windows\DoctorWindows\DoctorWindows\MedicineWindow.xaml;Windows\DoctorWindows\DoctorWindows\PDFWindow.xaml;Windows\DoctorWindows\DoctorWindows\ShowMedicine.xaml;Windows\DoctorWindows\DoctorWindows\TherapyDia.xaml;Windows\DoctorWindows\DoctorWindows\VacationWindow.xaml;MainWindow.xaml;Windows\DoctorWindows\DoctorWindows\1addAppointmentDialogDoctor.xaml;Windows\DoctorWindows\DoctorWindows\addAppointmentDialogDoctor.xaml;Windows\DoctorWindows\DoctorWindows\Views\ChartofAllergiesView.xaml;Windows\DoctorWindows\DoctorWindows\Views\EmergencyView.xaml;Windows\DoctorWindows\DoctorWindows\Views\MedicineCheckView.xaml;Windows\DoctorWindows\DoctorWindows\Views\ReportOfPatientpdfView.xaml;Windows\DoctorWindows\DoctorWindows\Views\ShowMedicineView.xaml;Windows\ManagerWindows\CreateRoomDialog.xaml;Windows\PatientWindows\AppointmentsForGrading.xaml;Windows\PatientWindows\ChangeAppointment.xaml;Windows\PatientWindows\ConfirmDialog.xaml;Windows\PatientWindows\DateChanger.xaml;Windows\PatientWindows\GradingHospital.xaml;Windows\PatientWindows\GradingAppointment.xaml;Windows\PatientWindows\HamburgerMenu2.xaml;Windows\PatientWindows\HamburgerMenu1.xaml;Windows\PatientWindows\InformationDialog.xaml;Windows\PatientWindows\LoginPatient.xaml;Windows\PatientWindows\LoginPatientPage.xaml;Windows\PatientWindows\MainHamburgerMenu.xaml;Windows\PatientWindows\PasswordConfirm.xaml;Windows\PatientWindows\PasswordChange.xaml;Windows\PatientWindows\RegisterPatient.xaml;Windows\PatientWindows\ShowExecutedAppointment.xaml;Windows\PatientWindows\Views\AccountView.xaml;Windows\PatientWindows\Views\MedicineView.xaml;Windows\PatientWindows\Views\NotePageView.xaml;Windows\PatientWindows\AddAppointment.xaml;Windows\PatientWindows\DatePicker.xaml;Windows\PatientWindows\Views\NotificationPageView.xaml;Windows\PatientWindows\NotificationWindow.xaml;Windows\PatientWindows\ShowAppointment.xaml;Windows\PatientWindows\PatientNotes.xaml;Windows\PatientWindows\PatientAppointments.xaml;Windows\PatientWindows\Views\TherapyView.xaml;Windows\SecretaryWindows\AddAlergenWindow.xaml;Windows\DoctorWindows\DoctorWindows\DoctorsAppointments.xaml;Windows\DoctorWindows\DoctorWindows\doctorShowAppointment.xaml;Windows\DoctorWindows\DoctorWindows\DoctorWindow.xaml;Windows\SecretaryWindows\EmergencyWindow.xaml;Windows\SecretaryWindows\EquipmentWindow.xaml;Windows\SecretaryWindows\ManagerWindow.xaml;Windows\PatientWindows\PatientWindow.xaml;Windows\SecretaryWindows\NoAccountAppointment.xaml;Windows\SecretaryWindows\OperationWindow.xaml;Windows\SecretaryWindows\SecretaryPacientAppointment.xaml;Windows\SecretaryWindows\SecretaryWindow.xaml;Windows\SecretaryWindows\StaffRegistrationWindow.xaml;Windows\SecretaryWindows\Views\AddAlergenView.xaml;Windows\SecretaryWindows\Views\EquipmentView.xaml;Windows\SecretaryWindows\Views\MeetingScheduleView.xaml;Windows\SecretaryWindows\Views\SecretaryView.xaml;Windows\SecretaryWindows\Views\VacationApprovingView.xaml;
+
+False
+

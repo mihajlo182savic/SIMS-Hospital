@@ -1,0 +1,8 @@
+0|5|a-|polen-prasina-kraj
+1|6|a-|polen-kraj
+2|7|a-|polen-kraj
+3|8|a-|polen-kraj
+4|9|a-|polen-kraj
+5|10|a-|polen-kraj
+6|11|a-|polen-kraj
+7|12|ab+|perje-kraj

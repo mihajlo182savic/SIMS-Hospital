@@ -1,0 +1,4 @@
+Milica|Milutinovic|Sirija|Beograd|Bulevar|21|123|0124454|milica@gmail.com|0|No specialization|14
+Dragan|Petrovic|Serbia|Novi Sad|Slobodana Bajica|5a|321|+06987654321|Dragan@gmail.com|1|No specialization|14
+Mirko|Jovic|Serbia|Novi Sad|Milesevska|32|456|06918273645|Mirko@gmail.com|2|Kardiohirurg|14
+Goran|Nikolic|Serbia|Novi Sad|Sarajevska|23a|Fata|06192837465|Goran@gmail.com|4|Kardiohirurg|14

@@ -1,0 +1,92 @@
+﻿<Window x:Class="SIMS_Projekat_Bolnica_Zdravo.Windows.SecretaryWindows.Views.MeetingScheduleView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vml="clr-namespace:MVVM1.VML"
+        vml:ViewModelLocator.AutoHookedUpViewModel="True"
+        xmlns:data="clr-namespace:SIMS_Projekat_Bolnica_Zdravo.Model"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       
+        mc:Ignorable="d"
+        Title="MeetingScheduleView"  Height="768" Width="1024">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="PatientGrid" Grid.Column="3" Margin="15,15,15,0" SelectedItem="{Binding Vacation, Mode=TwoWay}" FontSize="17" ItemsSource="{Binding meetingList, Mode=TwoWay}" Grid.ColumnSpan="1" VerticalAlignment="Top" HorizontalAlignment="Center" AutoGenerateColumns="False" SelectionMode="Single"  Grid.Row="1" Width="500" Height="250"  Grid.RowSpan="2"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Room" Binding="{Binding meetingRoom}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Duration" Binding="{Binding duration}"></DataGridTextColumn>
+                <DataGridTextColumn Header="TimeStart" Binding="{Binding timeStart}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="insertButton" Content="Schedule" Margin="10" FontSize="17" Width="86" Height="25" Command="{Binding ConfirmCommand}"  />
+                <Button x:Name="cancelButton" Content="Cancel" Margin="10" FontSize="17" Width="86" Height="25" Command="{Binding ReverseCommand}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel  Orientation="Horizontal" >
+
+                <Label Content="Date:" Grid.Row="3" Grid.Column="3" FontSize="17" Margin="10" HorizontalAlignment="Left"></Label>
+
+                <DatePicker FontSize="17" Grid.Column="3" HorizontalAlignment="Right" Width="140" Margin="20,10,10,10" Grid.Row="3" VerticalAlignment="Center"/>
+        </StackPanel>
+            <StackPanel  Orientation="Horizontal" >
+                <Label Content="Room:" Grid.Row="5" Grid.Column="3" FontSize="17" Margin="10" HorizontalAlignment="Left"></Label>
+                <ComboBox x:Name="RoomList" Grid.Column="3" ItemsSource="{Binding roomList}" SelectedItem="{Binding Room, Mode=TwoWay}" HorizontalAlignment="Right" Margin="12,10,10,10" Grid.Row="5" VerticalAlignment="Center" Width="140"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal">
+
+                <Label Content="Time:" Grid.Row="4" Grid.Column="3" FontSize="17" Margin="10" HorizontalAlignment="Left"></Label>
+
+                <ComboBox Name="timeComboBox" Grid.Column="3" ItemsSource="{Binding timeList, Mode=TwoWay}" SelectedItem="{Binding TimeStart, Mode=TwoWay}" HorizontalAlignment="Right" Margin="20,10,10,10" Grid.Row="4" VerticalAlignment="Center" Width="140"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal">
+                <StackPanel  Orientation="Vertical">
+                    <Label Content="Secretary:" Grid.Row="4" Grid.Column="3" FontSize="17" Margin="10" HorizontalAlignment="Left"></Label>
+                    <Label Content="Doctor:" Grid.Row="4" Grid.Column="3" FontSize="17" Margin="10" HorizontalAlignment="Left"></Label>
+                    <Label Content="Manager:" Grid.Row="4" Grid.Column="3" FontSize="17" Margin="10" HorizontalAlignment="Left"></Label>
+
+                </StackPanel>
+                <StackPanel  Orientation="Vertical">
+                    <CheckBox Name="Secretary" Grid.Row="4" IsChecked="{Binding Secretars}" Grid.Column="3" Margin="10,20,10,10" HorizontalAlignment="Center"></CheckBox>
+                    <CheckBox Name="Doctor" Grid.Row="4" IsChecked="{Binding Doctors}"  Grid.Column="3" Margin="10,25,10,10" HorizontalAlignment="Center"></CheckBox>
+                    <CheckBox Name="Manager" Grid.Row="4" IsChecked="{Binding Managers}" Grid.Column="3" Margin="10,30,10,10" HorizontalAlignment="Center"></CheckBox>
+
+                </StackPanel>
+                
+               
+            </StackPanel>
+            
+            
+        </StackPanel>
+        
+
+    </Grid>
+</Window>

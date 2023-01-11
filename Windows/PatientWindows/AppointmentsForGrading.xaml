@@ -1,0 +1,62 @@
+﻿<Page x:Class="SIMS_Projekat_Bolnica_Zdravo.PatientWindows.AppointmentsForGrading"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SIMS_Projekat_Bolnica_Zdravo.PatientWindows"
+      mc:Ignorable="d" 
+      d:DesignHeight="530" d:DesignWidth="430"
+      Title="AppointmentsForGrading">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="410"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="AppointmentsListGrid" IsReadOnly="True" HorizontalAlignment="Left" Height="530" Grid.Row="0" ItemsSource="{Binding}" AutoGenerateColumns="False" VerticalAlignment="Top" Width="430" SelectionMode="Single" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Doctor" FontSize="15" Header="Doktor" Width="auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="doctorName"/>
+                            <Binding Path="doctorSurname"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Opis pregleda" Width="150" Binding="{Binding desc}" FontSize="15">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button FontSize="15" Margin="10,10,10,10" Content="Prikaži" Click="Show_Executed_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button FontSize="15" Margin="10,10,10,10" Content="Oceni" IsEnabled="{Binding Path=isNotGraded}" Click="Grade_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

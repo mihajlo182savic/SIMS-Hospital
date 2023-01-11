@@ -1,0 +1,121 @@
+﻿<Window x:Class="SIMS_Projekat_Bolnica_Zdravo.Windows.AddAppointmentDialogDoctor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMS_Projekat_Bolnica_Zdravo.Windows"
+        mc:Ignorable="d"
+        Closed="Window_Closed"
+        Title="Add New Appointment" Height="770" Width="1400" Background="AntiqueWhite" WindowStartupLocation="CenterScreen">
+    <Grid Name="firstgrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="3" Name="secondgrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="271*"/>
+                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="236*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <Button BorderBrush="Black" BorderThickness="3" Foreground="White"  Background="#4C1130" Grid.Row = "8" Content="Create" FontSize="33" Grid.ColumnSpan="3"
+               HorizontalAlignment="Right" Name="createAppointmentDoctor" Click="createAppointmentDoctor_Click" Grid.Column="3" Width="250" Height="80">
+        </Button>
+        <StackPanel  Grid.Column="2" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2">
+            <TextBlock
+               FontSize="34">Patient:</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="name" FontSize="34" Margin="5,0,5,0" Text="{Binding This.pat.name}"></TextBlock>
+                <TextBlock x:Name="surname" FontSize="34" Margin="5,0,5,0"  Text="{Binding This.pat.surname}"></TextBlock>
+                <TextBlock x:Name="id" FontSize="34" Margin="5,0,5,0" Text="{Binding This.pat.id}"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <Viewbox Grid.Column="2" Grid.Row="2" Height="400" Width="500">
+            <Calendar  Loaded="appointmentDate_Loaded" x:Name="appointmentDate" SelectedDatesChanged="appointmentDate_SelectedDatesChanged"></Calendar>
+        </Viewbox>
+        <Grid Grid.Row="3" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="13" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="137"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <ComboBox ItemsSource="{Binding Docs}" x:Name="doctorsCB" SelectionChanged="doctorsCB_SelectionChanged" Grid.Column="3"  Grid.Row="3" FontSize="34" Margin="5">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Grid.Column="0">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}dr {0} {1} {2}">
+                                    <Binding Path="name"/>
+                                    <Binding Path="surname"/>
+                                    <Binding Path="id" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox Loaded="roomID_Loaded" DisplayMemberPath="name" x:Name="roomID" Grid.Column="3" Grid.Row="4" FontSize="34" Margin="5" SelectionChanged="roomID_SelectionChanged" ItemsSource="{Binding Rooms}">
+
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" FontSize="34" Grid.ColumnSpan="2">Specialization:</TextBlock>
+            <ComboBox SelectionChanged="Spec_SelectionChanged"  Loaded="Spec_Loaded" DisplayMemberPath="specialization" Name="Spec" Grid.Column="3" Grid.Row="2" FontSize="34" Margin="5" ItemsSource="{Binding Specs}"></ComboBox>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1"
+               FontSize="34" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,0,469,0">Doctor:</TextBlock>
+            <TextBlock
+              HorizontalAlignment="Left" FontSize="34" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">Room:</TextBlock>
+
+            <TextBlock HorizontalAlignment="Left"  FontSize="34" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,0,469,0">Duration:</TextBlock>
+            <Grid Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="duration" IsReadOnly="True"
+                FontSize="34" Grid.Row="0" Width="70" Grid.Column="1" Margin="0,5,5,5" Text="{Binding ElementName=slider1,Path=Value,UpdateSourceTrigger=LostFocus}"/>
+                <TextBlock x:Name="min" 
+                FontSize="34" Grid.Row="0" Grid.Column="2" Width="55" Margin="5" Text="min"/>
+                <Slider ValueChanged="slider1_GotFocus" TickFrequency="30" IsSnapToTickEnabled="True" x:Name="slider1" VerticalAlignment="Center"
+                FontSize="34" Grid.Row="0" Grid.Column="3" Width="300" Margin="10,21,10,10" Value="{Binding This.Duration, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Minimum="30" Maximum="180"/>
+            </Grid>
+        </Grid>
+        <Button Name="cancel" BorderBrush="Black" BorderThickness="3" Foreground="White"  Background="#4C1130" Grid.Row = "8" Content="Back" FontSize="33" Grid.ColumnSpan="2"
+            HorizontalAlignment="Left" Click="cancel_Click" Grid.Column="1" Width="250" Height="80" VerticalAlignment="Bottom"/>
+        <DataGrid IsReadOnly="True" x:Name="TimeselectDG" SelectionChanged="TimeselectDG_SelectionChanged" AutoGenerateColumns="False" Margin="10" Width="500" Height="380" VerticalAlignment="Top" Grid.Column="3" Grid.Row="2" FontSize="30" ItemsSource="{Binding Path = Tims1,  Mode=OneWay,UpdateSourceTrigger=PropertyChanged}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Pick the time:" FontSize="60" x:Name="Time" Binding="{Binding time}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

@@ -1,0 +1,6 @@
+Aspirin|sastoja1,sastojak2,sastojak3|1|0
+Morfin|sastoja1,sastojak2,sastojak3,sastojak4|0|1
+Paracetamol|sastoja1,sastojak2,sastojak3|1|3
+Deprozepan|sastoja1,sastojak2,sastojak3,xd|1|4
+Kardiopirin|sastoja1,sastojak2,sastojak3|0|5
+Lometazid|sastoja1,sastojak2,sastojak3|1|6

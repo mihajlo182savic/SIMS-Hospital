@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="SIMS_Projekat_Bolnica_Zdravo.Windows.PatientWindows.Views.MedicineView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vml="clr-namespace:MVVM1.VML"
+             vml:ViewModelLocator.AutoHookedUpViewModel="True"
+             xmlns:data="clr-namespace:SIMS_Projekat_Bolnica_Zdravo.Model"
+             xmlns:local="clr-namespace:SIMS_Projekat_Bolnica_Zdravo.Windows.PatientWindows.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="430">
+
+    <Grid Background="White">
+        <DataGrid ItemsSource="{Binding Medicines}" FontSize="15" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ime leka" Width="143.33" FontSize="15" Binding="{Binding medsName}"/>
+                <DataGridTextColumn Header="Frekvencija unosa" Width="143.33" FontSize="15" Binding="{Binding freq}"/>
+                <DataGridTextColumn Header="Količina" Width="143.33" FontSize="15" Binding="{Binding amount}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

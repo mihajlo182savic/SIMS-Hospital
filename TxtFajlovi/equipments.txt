@@ -1,0 +1,10 @@
+0|CT|1|True
+1|Stetoskop|1|True
+2|Kasika|1|True
+3|Viljuska|1|True
+4|Noz|1|True
+5|Stetoskop|60|True
+6|NESTO|62|True
+7|kkk|2|True
+8|dddd|33|True
+9|Neka|12|True

@@ -1,0 +1,93 @@
+﻿<Window x:Class="SIMS_Projekat_Bolnica_Zdravo.Windows.OperationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMS_Projekat_Bolnica_Zdravo.Windows"
+        mc:Ignorable="d"
+        Title="OperationWindow" Height="768" Width="1024" WindowStyle="None">
+    <Grid Loaded="isLoaded">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <DataGrid x:Name="PatientGrid" FontSize="17" Grid.Column="4" Margin="5" Grid.ColumnSpan="3" VerticalAlignment="Center"  AutoGenerateColumns="False" SelectionMode="Single"  ItemsSource="{Binding pcad}" Grid.Row="4" Width="400" Height="150"  >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Surname" Binding="{Binding surname}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="JMBG" Binding="{Binding JMBG}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Content="Room:" FontSize="17"  Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.Row="1"/>
+            <ComboBox x:Name="emailTextBox" Margin="5" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" Width="170" Grid.Row="1"  Grid.Column="6" />
+            <Label Content="Doctor:" Grid.Row="2" FontSize="17" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox x:Name="passwordTextBox" FontSize="17" VerticalAlignment="Center" Margin="5" Grid.Row="2" HorizontalAlignment="Center" Width="170" Grid.Column="6" />
+
+
+
+
+            <StackPanel Grid.Row="8" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="registerButton" Content="Register" Margin="5" FontSize="17" Width="86" Height="25" Click="registerButton_Click"  />
+                    <Button x:Name="deleteButton" Content="Delete" Margin="5" FontSize="17" Width="86" Height="25" Click="OnClick" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="updateButton" Content="Update"  Margin="5" FontSize="17" Width="86" Height="25" Click="updateButton_Click"  />
+                    <Button x:Name="cancelButton" Content="Cancel"  Margin="5" FontSize="17" Width="86" Height="25" Click="cancelButton_Click"  />
+                </StackPanel>
+            </StackPanel>
+            <DataGrid x:Name="AppointmentGrid" FontSize="17" Grid.Row="7" Margin="5" AutoGenerateColumns="False" SelectionMode="Single" Grid.Column="4" Grid.ColumnSpan="3" Width="400" Height="150" ItemsSource="{Binding sad}" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding patientID }"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Name" Binding="{Binding patientName }"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Surname" Binding="{Binding patientSurname }"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Room" Binding="{Binding roomName }"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date }"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Time" Binding="{Binding Time }"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Desc" Binding="{Binding desc }"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Grid.Row="5" FontSize="17" AutoGenerateColumns="False" Margin="5" SelectionMode="Single" Height="150" ItemsSource="{Binding time}" x:Name="TimeGrid"  Grid.Column="6"  IsReadOnly="True" ScrollViewer.CanContentScroll="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Time" Binding="{Binding time}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Calendar  x:Name="appointmentDate" Height="150" FontSize="17" SelectedDatesChanged="appointmentDate_SelectedDatesChanged" Grid.Column="4" Grid.Row="5"/>
+            <TextBox x:Name="duration" IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Left"
+                FontSize="17" Grid.Row="3" Grid.Column="4" Margin="5" Text="{Binding ElementName=slider1,Path=Value,UpdateSourceTrigger=LostFocus}"/>
+            <Slider ValueChanged="slider1_GotFocus" TickFrequency="30" IsSnapToTickEnabled="True" x:Name="slider1" VerticalAlignment="Center"
+                FontSize="17" Grid.Row="3" Grid.Column="6" Width="170"  Margin="5" Value="{Binding This.dur, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Minimum="30" Maximum="180"/>
+
+
+
+
+
+        </Grid>
+    </Grid>
+</Window>

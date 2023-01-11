@@ -1,0 +1,24 @@
+﻿<Window x:Class="SIMS_Projekat_Bolnica_Zdravo.DoctorAll.DoctorWindows.ShowMedicine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMS_Projekat_Bolnica_Zdravo.DoctorAll.DoctorWindows"
+        mc:Ignorable="d"
+        Title="ShowMedicine" Height="750" Width="800" Background="AntiqueWhite" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid HorizontalScrollBarVisibility="Visible" Grid.Row="1" IsReadOnly="True" Name="comp" ItemsSource="{Binding med.content}" Margin="5" FontSize="60" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Component" Width="*" x:Name="Patname" Binding="{Binding Value}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock FontSize="70" HorizontalAlignment="Center" Text="{Binding med.name}"></TextBlock>
+        <Button Click="approve_Click" FontSize="50" x:Name="approve" Grid.Column="1" Grid.Row="6" Style="{StaticResource doctorButtons}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Approve"/>
+        <Button Click="deny_Click" FontSize="50" x:Name="deny" Grid.Column="1" Grid.Row="6" Style="{StaticResource doctorButtons}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Deny"/>
+    </Grid>
+</Window>
